@@ -21,6 +21,8 @@ Or install it yourself as:
 ```ruby
 scored_events = Fantasyhub.get_scores_for(uid)
 # => [Event, Event, ...]
+
+scored_events.scores.reduce(:+)
 ```
 
 ## Code Health
