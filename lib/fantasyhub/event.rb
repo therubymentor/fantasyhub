@@ -1,5 +1,3 @@
-require 'fantasyhub'
-
 class Fantasyhub::Event
 
   attr_reader :actor, :event_type, :repo_url, :score, :created_at

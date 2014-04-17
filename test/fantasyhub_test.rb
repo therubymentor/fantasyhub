@@ -1,5 +1,4 @@
 require 'minitest_helper'
-require 'fantasyhub'
 
 describe Fantasyhub do
   subject { Fantasyhub }

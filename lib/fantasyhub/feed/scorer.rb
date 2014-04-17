@@ -1,6 +1,4 @@
-Gem.find_files("fantasyhub/events/*_event.rb").each { |path| require path }
 require 'fantasyhub/event'
-require 'fantasyhub/feed'
 
 module Fantasyhub::Feed::Scorer
   extend self

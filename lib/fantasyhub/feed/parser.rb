@@ -1,5 +1,4 @@
 require 'json'
-require 'fantasyhub/feed'
 
 module Fantasyhub::Feed::Parser
   extend self
