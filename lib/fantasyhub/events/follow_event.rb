@@ -1,9 +1,10 @@
-module FollowEvent
+require 'fantasyhub/events'
+
+module Fantasyhub::Events::FollowEvent
   extend self
 
   def score
     1
   end
-  alias_method :call, :score
 
 end

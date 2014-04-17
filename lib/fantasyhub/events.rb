@@ -1,0 +1,1 @@
+module Fantasyhub::Events;end

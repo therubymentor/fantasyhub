@@ -20,7 +20,8 @@ private
   end
 
   def score_by_type(event_type)
-    Object.const_get(event_type).score
+    namespace = "Fantasyhub::Events::#{event_type}"
+    Object.const_get(namespace).score
   end
 
 end

@@ -1,9 +1,10 @@
-module IssuesEvent
+require 'fantasyhub/events'
+
+module Fantasyhub::Events::IssuesEvent
   extend self
 
   def score
     3
   end
-  alias_method :call, :score
 
 end

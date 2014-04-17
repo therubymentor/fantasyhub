@@ -1,9 +1,10 @@
-module PullRequestEvent
+require 'fantasyhub/events'
+
+module Fantasyhub::Events::PullRequestEvent
   extend self
 
   def score
     5
   end
-  alias_method :call, :score
 
 end
