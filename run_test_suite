@@ -3,6 +3,7 @@ ENV['CODECLIMATE_REPO_TOKEN']='c538d6dd5d748bbbf66c5d52153973559287ae8bc7c323503
 
 require 'webmock'
 require "codeclimate-test-reporter"
+require "thincloud-test"
 
 WebMock.disable_net_connect!(:allow => "codeclimate.com")
 CodeClimate::TestReporter.start

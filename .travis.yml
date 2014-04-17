@@ -4,6 +4,6 @@ rvm:
   - 2.0.0
   - 2.1.1
 env:
-  - CI=true RAILS_ENV=test
+  - CI=true RAILS_ENV=test CODECLIMATE_REPO_TOKEN=c538d6dd5d748bbbf66c5d52153973559287ae8bc7c3235037d0cf56ec0e501c
 before_script: "./test/ci/before_script.sh"
 script: "./test/ci/ci_runner.sh"
