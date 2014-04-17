@@ -25,4 +25,4 @@ scored_events = Fantasyhub.get_scores_for(uid)
 
 ## Code Health
 
-[![Code Climate](https://codeclimate.com/github/thatrubylove/fantasyhub.png)](https://codeclimate.com/github/thatrubylove/fantasyhub)
+[![Code Climate](https://codeclimate.com/github/thatrubylove/fantasyhub.png)](https://codeclimate.com/github/thatrubylove/fantasyhub) [![Build Status](https://travis-ci.org/thatrubylove/fantasyhub.svg?branch=master)](https://travis-ci.org/thatrubylove/fantasyhub)
