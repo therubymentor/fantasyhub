@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+ENV['CODECLIMATE_REPO_TOKEN']='c538d6dd5d748bbbf66c5d52153973559287ae8bc7c3235037d0cf56ec0e501c'
+
+require 'webmock'
+require "codeclimate-test-reporter"
+
+WebMock.disable_net_connect!(:allow => "codeclimate.com")
+CodeClimate::TestReporter.start
+
+if __FILE__ == $0
+  $LOAD_PATH.unshift('lib', 'test')
+  fast_tests = `find ./test -name *_test.rb -print | xargs grep -l "minitest_helper"`
+  Dir.glob(fast_tests.split("\n")) { |f| puts f; require f }
+end

@@ -1,6 +1,6 @@
 # Fantasyhub
 
-TODO: Write a gem description
+This is the business logic behind th web app for PeepCode's PBP Challenge issued to @wycats and @tenderlove, This is my isolated, test driven, functional version.
 
 ## Installation
 
@@ -18,12 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+scored_events = Fantasyhub.get_scores_for(uid)
+# => [Event, Event, ...]
+```
 
-## Contributing
+## Code Health
 
-1. Fork it ( https://github.com/[my-github-username]/fantasyhub/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+[![Code Climate](https://codeclimate.com/github/thatrubylove/fantasyhub.png)](https://codeclimate.com/github/thatrubylove/fantasyhub)
