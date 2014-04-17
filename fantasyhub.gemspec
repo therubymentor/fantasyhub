@@ -8,9 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Fantasyhub::VERSION
   spec.authors       = ["thatrubylove"]
   spec.email         = ["thatrubylove@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Business logic for #peepcode's challenge, the fantasy league of githubbers}
+  spec.homepage      = "https://github.com/thatrubylove/fantasyhub"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,7 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5.3"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "thincloud-test"
+  spec.add_development_dependency "thincloud-test", "~> 1.0.0"
   spec.add_development_dependency "formatador"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
