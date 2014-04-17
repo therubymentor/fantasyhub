@@ -1,10 +1,10 @@
 require 'minitest_helper'
 require 'json'
-require 'fantasyhub/feed_downloader'
+require 'fantasyhub/feed/downloader'
 
-describe FeedDownloader do
+describe Fantasyhub::Feed::Downloader do
   describe "download(uid)" do
-    subject { FeedDownloader.download("tenderlove") }
+    subject { Fantasyhub::Feed::Downloader.download("tenderlove") }
     it "must download the activity json for a user" do
       VCR.use_cassette("tenderlove_activity_feed") do
         JSON.parse(subject)[0]["actor"].must_equal "tenderlove"

@@ -1,0 +1,2 @@
+module Fantasyhub::Feed;end
+

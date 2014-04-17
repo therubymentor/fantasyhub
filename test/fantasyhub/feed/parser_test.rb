@@ -1,10 +1,10 @@
 require 'minitest_helper'
-require 'fantasyhub/feed_parser'
+require 'fantasyhub/feed/parser'
 
-describe FeedParser do
-  subject { FeedParser }
+describe Fantasyhub::Feed::Parser do
+  subject { Fantasyhub::Feed::Parser }
   describe "parse(feed)" do
-    let(:fixture) { File.expand_path("../../fixtures/tenderlove.json", __FILE__) }
+    let(:fixture) { File.expand_path("../../../fixtures/tenderlove.json", __FILE__) }
     let(:feed)    { File.read(fixture) }
 
     it "must return a collectiopn of Events" do

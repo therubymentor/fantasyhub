@@ -1,13 +1,14 @@
 Gem.find_files("fantasyhub/events/*_event.rb").each { |path| require path }
 require 'fantasyhub/event'
+require 'fantasyhub/feed'
 
-module FeedScorer
+module Fantasyhub::Feed::Scorer
   extend self
 
   def score(feed)
     feed.map do |item|
       with_score = merge_in_score(item)
-      Event.new(with_score)
+      ::Fantasyhub::Event.new(with_score)
     end
   end
   alias_method :call, :score

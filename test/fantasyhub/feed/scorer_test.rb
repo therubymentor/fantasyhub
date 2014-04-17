@@ -1,8 +1,8 @@
 require 'minitest_helper'
-require 'fantasyhub/feed_scorer'
+require 'fantasyhub/feed/scorer'
 
-describe FeedScorer do
-  subject { FeedScorer }
+describe Fantasyhub::Feed::Scorer do
+  subject { Fantasyhub::Feed::Scorer }
 
   describe "score(feed)" do
     it "must score a feed" do

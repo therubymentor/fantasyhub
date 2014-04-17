@@ -1,6 +1,7 @@
 require 'open-uri'
+require 'fantasyhub/feed'
 
-module FeedDownloader
+module Fantasyhub::Feed::Downloader
   extend self
 
   def download(uid)

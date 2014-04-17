@@ -1,7 +1,4 @@
 require "fantasyhub/version"
-require "fantasyhub/feed_downloader"
-require "fantasyhub/feed_parser"
-require "fantasyhub/feed_scorer"
 
 module Fantasyhub
   extend self
@@ -14,14 +11,19 @@ module Fantasyhub
 private
 
   def activity_feed(uid)
-    FeedDownloader.(uid)
+    Feed::Downloader.(uid)
   end
 
   def parsed(feed)
-    FeedParser.(feed)
+    Feed::Parser.(feed)
   end
 
   def score(feed)
-    FeedScorer.(feed)
+    Feed::Scorer.(feed)
   end
 end
+
+require "fantasyhub/feed"
+require "fantasyhub/feed/downloader"
+require "fantasyhub/feed/parser"
+require "fantasyhub/feed/scorer"
