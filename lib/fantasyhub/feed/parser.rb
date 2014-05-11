@@ -12,8 +12,10 @@ module Fantasyhub::Feed::Parser
 private
 
   def transform_feed_keys(feed)
-    feed.map {|item| { actor: item["actor"], repo_url: item["repository"]["url"],
-                       created_at: item["created_at"], event_type: item["type"] } }
+    feed.map {|item| {
+      actor: item.fetch("actor"),
+      repo_url: item.fetch("repository", {}).fetch("url", "private"),
+      created_at: item.fetch("created_at"), event_type: item.fetch("type") } }
   end
 
   def parse_json(feed)

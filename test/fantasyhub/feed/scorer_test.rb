@@ -12,7 +12,7 @@ describe Fantasyhub::Feed::Scorer do
                 repo_url: "repo-url", created_at: "some-date" },]
       subject.score(feed).map {|event| event.score }.reduce(:+).must_equal 14
     end
-4
+
     it "must return score a PushEvent" do
       feed = [{ actor: "tenderlove", event_type: "PushEvent",
                   repo_url: "repo-url", created_at: "some-date" },]
