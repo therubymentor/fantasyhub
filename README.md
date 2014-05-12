@@ -19,10 +19,10 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-scored_events = Fantasyhub.get_scores_for(uid)
+scored_events = Fantasyhub.score_activity_feed(uid)
 # => [Event, Event, ...]
 
-scored_events.scores.reduce(:+)
+scored_events.map{|event| event.score}.reduce(:+)
 ```
 
 ## Code Health
