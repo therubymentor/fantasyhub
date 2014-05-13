@@ -4,8 +4,7 @@ require 'fantasyhub/feed/parser'
 describe Fantasyhub::Feed::Parser do
   subject { Fantasyhub::Feed::Parser }
   describe "parse(feed)" do
-    let(:fixture) { File.expand_path("../../../fixtures/tenderlove.json", __FILE__) }
-    let(:feed)    { File.read(fixture) }
+    let(:feed) { File.read("#{FIXTURE_PATH}/tenderlove.json") }
 
     it "must return a collectiopn of Events" do
       parsed = subject.parse(feed)
