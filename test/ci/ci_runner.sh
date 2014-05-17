@@ -1,1 +1,1 @@
-./run_test_suite
+./bin/run_test_suite
