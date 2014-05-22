@@ -8,6 +8,7 @@ WebMock.disable_net_connect!(:allow => "codeclimate.com")
 CodeClimate::TestReporter.start
 
 if __FILE__ == $0
+  FIXTURE_PATH = File.expand_path("../test/fixtures", __FILE__)
   $LOAD_PATH.unshift('lib', 'test')
   fast_tests = `find ./test -name *_test.rb -print | xargs grep -l "minitest_helper"`
   Dir.glob(fast_tests.split("\n")) { |f| puts f; require f }
