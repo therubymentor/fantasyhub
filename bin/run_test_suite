@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+exit(1) if __FILE__ != $0
+
 require 'bundler/setup'
 require 'webmock'
 require "codeclimate-test-reporter"
@@ -8,10 +10,12 @@ if ENV.has_key?("CODECLIMATE_REPO_TOKEN")
   CodeClimate::TestReporter.start
 end
 
-if __FILE__ == $0
-  $LOAD_PATH.unshift('lib', 'test')
-  fast_tests = `find ./test -name *_test.rb -print | xargs grep -l "minitest_helper"`
-  Dir.glob(fast_tests.split("\n")) { |f| puts f; require f }
-  slow_tests = `find ./test -name *_test.rb -print | xargs grep -L "minitest_helper"`
-  Dir.glob(slow_tests.split("\n")) { |f| puts f; require f }
-end
+$LOAD_PATH.unshift('lib', 'test')
+
+fast_tests = `find ./test -name *_test.rb -print | xargs grep -l "minitest_helper"`
+Dir.glob(fast_tests.split("\n")) { |f| puts f; require f }
+
+exit(0) unless ENV.keys.include?("SLOW")
+
+slow_tests = `find ./test -name *_test.rb -print | xargs grep -L "minitest_helper"`
+Dir.glob(slow_tests.split("\n")) { |f| puts f; require f }
