@@ -1,4 +1,5 @@
-if RUBY_ENGINE == "ruby"
+if RUBY_ENGINE == "ruby" &&
+   ENV.has_key?("SLOW")
   begin
     require "simplecov"
     SimpleCov.start do

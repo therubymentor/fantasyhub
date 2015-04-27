@@ -16,6 +16,6 @@ private
   end
 
   def feed_url(uid)
-    "https://api.github.com/users/#{uid}/events"
+    "https://github.com/#{uid}.json"
   end
 end

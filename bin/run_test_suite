@@ -3,11 +3,14 @@ exit(1) if __FILE__ != $0
 
 require 'bundler/setup'
 require 'webmock'
-require "codeclimate-test-reporter"
 
-if ENV.has_key?("CODECLIMATE_REPO_TOKEN")
-  WebMock.disable_net_connect!(:allow => "codeclimate.com")
-  CodeClimate::TestReporter.start
+if ENV.has_key?("SLOW")
+  if ENV.has_key?("CODECLIMATE_REPO_TOKEN")
+    require "codeclimate-test-reporter"
+
+    WebMock.disable_net_connect!(:allow => "codeclimate.com")
+    CodeClimate::TestReporter.start
+  end
 end
 
 $LOAD_PATH.unshift('lib', 'test')
